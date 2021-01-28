@@ -31,10 +31,21 @@ const characters = [
 
 //***MAP***
 //1. Get array of all names
+const getAllNames = characters.map( (charecter) => charecter.name);
+console.log(getAllNames);
+console.log (typeof getAllNames);
 //2. Get array of all heights
+const getAllHeights = characters.map( (charecter) => charecter.height) 
+console.log(getAllHeights);
 //3. Get array of objects with just name and height properties
+const transformCharacters = characters.map( (character) => ({
+    name: character.name, 
+    height: character.height
+}));
+console.log(transformCharacters);
 //4. Get array of all first names
-
+const getAllFirstNames = characters.map( (charecter) => charecter.name.split(" ")[0]); 
+console.log(getAllFirstNames);
 //***REDUCE***
 //1. Get total mass of all characters
 //2. Get total height of all characters
@@ -44,18 +55,18 @@ const characters = [
 //***FILTER***
 //1. Get characters with mass greater than 100
 const charMassGreater100 = characters.filter(character => character.mass > 100);
-console.log (charMassGreater100);
+// console.log (charMassGreater100);
+// console.log (typeof charMassGreater100); 
 //2. Get characters with height less than 200
 const charHeightLess200 = characters.filter(character => character.height < 200)
-console.log(charHeightLess200);
-console.log("******************");
+// console.log(charHeightLess200);
 
 //3. Get all male characters
 const maleOnlyCharecter = characters.filter(character => character.gender ==="male");
-console.log(maleOnlyCharecter);
+//console.log(maleOnlyCharecter);
 //4. Get all female characters
 const femaleOnlyCharecter = characters.filter(character => character.gender ==="female");
-console.log(femaleOnlyCharecter);
+//console.log(femaleOnlyCharecter);
 
 //***SORT***
 //1. Sort by mass
