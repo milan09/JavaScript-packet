@@ -32,20 +32,20 @@ const characters = [
 //***MAP***
 //1. Get array of all names
 const getAllNames = characters.map( (charecter) => charecter.name);
-console.log(getAllNames);
-console.log (typeof getAllNames);
+//console.log(getAllNames);
+//console.log (typeof getAllNames);
 //2. Get array of all heights
 const getAllHeights = characters.map( (charecter) => charecter.height) 
-console.log(getAllHeights);
+//console.log(getAllHeights);
 //3. Get array of objects with just name and height properties
 const transformCharacters = characters.map( (character) => ({
     name: character.name, 
     height: character.height
 }));
-console.log(transformCharacters);
+//console.log(transformCharacters);
 //4. Get array of all first names
 const getAllFirstNames = characters.map( (charecter) => charecter.name.split(" ")[0]); 
-console.log(getAllFirstNames);
+//console.log(getAllFirstNames);
 //***REDUCE***
 //1. Get total mass of all characters
 //2. Get total height of all characters
@@ -70,9 +70,27 @@ const femaleOnlyCharecter = characters.filter(character => character.gender ==="
 
 //***SORT***
 //1. Sort by mass
+const sortedByMass = characters.sort( (a,b) => {
+    return a.mass - b.mass;
+});
+//console.log(sortedByMass);
 //2. Sort by height
+const sortedByheight = characters.sort( (a,b) => {
+    return b.height - a.height;
+});
+//console.log(sortedByheight);
 //3. Sort by name
+const byName = characters.sort( (a,b) => {
+    if(a.name < b.name) return -1;
+    return 1;
+});
+//console.log(byName);
 //4. Sort by gender
+const byGender = characters.sort( (a,b) => {
+    if(a.gender === 'male') return -1;
+    //return 1;
+});
+console.log(byGender);
 
 //***EVERY***
 //1. Does every character have blue eyes?
