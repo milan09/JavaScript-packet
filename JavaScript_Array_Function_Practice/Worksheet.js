@@ -100,6 +100,12 @@ console.log(byGender);
 
 //***SOME***
 //1. Is there at least one male character?
+const oneMaleCharacter = characters.some((character) => {
+    return character.gender === "male";
+});
 //2. Is there at least one character with blue eyes?
+const oneBlueEyes = characters.some((character) => character.eye_color === "blue");
 //3. Is there at least one character taller than 210?
+const tallerCharacter = characters.some((character) => character.height > 210);
 //4. Is there at least one character that has mass less than 50?
+const lessMass = characters.some((character) => character.mass < 50);
